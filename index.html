@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/respoetema.css" />
+
+</head>
+
+<body>
+
+  <!-- Botão modo claro/escuro fixo no canto superior direito -->
+  <div id="botaoTemaContainer" style="position: fixed; top: 10px; right: 10px; z-index: 999;">
+    <button id="btnTema" aria-label="Alternar modo claro/escuro">🌙</button>
+  </div>
+
+  <div id="notification" class="notification"></div>
+
+  <!-- Novo layout combinando imagem + formulários -->
+  <div class="layout-wrapper">
+    <!-- Lado da imagem -->
+    <div class="image-side">
+      <img src="./public/img/Volutario2.png" alt="Tela de login" />
+    </div>
+
+    <!-- Lado dos formulários -->
+    <div class="container" id="container">
+      <!-- Tela de Login -->
+      <div class="form-container sign-in-container">
+        <form id="loginForm">
+          <h1>Login</h1>
+          <input type="email" placeholder="Email" id="loginEmail" required />
+          <input type="password" placeholder="Senha" id="loginPassword" required />
+          <button type="submit">Entrar</button>
+          <a href="#" id="forgotPassword">🔒 Esqueceu a senha?</a>
+          <a href="#" id="register">✨ Criar conta</a>
+        </form>
+      </div>
+
+      <!-- Tela de Cadastro -->
+      <div class="form-container sign-up-container">
+        <form id="registerForm">
+          <h1>Criar Conta</h1>
+          <input type="text" placeholder="Nome" id="registerName" required />
+          <input type="email" placeholder="Email" id="registerEmail" required />
+          <input type="password" placeholder="Senha" id="registerPassword" required />
+          <button type="submit">Registrar</button>
+          <a href="#" id="backToLogin">Já tenho conta</a>
+        </form>
+      </div>
+
+      <!-- Tela de Recuperação de Senha -->
+      <div class="form-container forgot-password-container">
+        <form id="forgotPasswordForm">
+          <h1>Recuperar Senha</h1>
+          <input type="email" placeholder="Email" id="forgotPasswordEmail" required />
+          <button type="submit">Enviar</button>
+          <a href="#" id="backToLoginFromForgot">Voltar para Login</a>
+        </form>
+      </div>
+
+      <!-- Tela de Usuário Logado -->
+      <div class="form-container logged-in-container">
+        <form id="loggedInForm">
+          <h1>Você está logado</h1>
+          <button type="button" id="logoutButton">Deslogar</button>
+          <button type="button" id="deleteAccountButton">Apagar conta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./assets/js/tema.js"></script>
+  <script src="./assets/js/login.js"></script>
+</body>
+
+</html>
