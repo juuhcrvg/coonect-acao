@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos - Conect Ação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/respoetema.css">
-
-</head>
+    </head>
 
 <body>
     <header>
@@ -28,16 +22,15 @@
                 <img src="../public/img/Picsart_25-05-20_22-23-51-427.png" alt="Logo da Plataforma" id="logo">
                 <h1>ConectAção</h1>
             </div>
-
-            <nav class="main-nav">
-            <ul>
-                    <li><a href="/dashboard.html" class="nav-link">Início</a></li>
-                    <li><a href="../public/events.html">Eventos</a></li>
-                    <li><a href="../public/volunteers.html" class="nav-link">Voluntários</a></li>
-                    <li><a href="../public/profile.html" class="nav-link">Perfil</a></li>
-                    <li><a href="../public/reports.html" class="nav-link">Relatórios</a></li>
-                </ul>
-                </nav>
+<nav class="main-nav">
+    <ul>
+        <li><a href="../dashboard.html" class="nav-link">Início</a></li>
+        <li><a href="events.html">Eventos</a></li>
+        <li><a href="volunteers.html" class="nav-link">Voluntários</a></li>
+        <li><a href="profile.html" class="nav-link">Perfil</a></li>
+        <li><a href="reports.html" class="nav-link">Relatórios</a></li>
+    </ul>
+</nav>
 
                 <!-- BOTÃO TEMA -->
                 <button id="toggle-theme" title="Alternar tema">
@@ -478,9 +471,12 @@
         });
     </script>
 
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js"></script>
     <script src="../assets/js/dashboard.js"></script>
     <script src="../assets/js/tema.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
 
 </body>
 
