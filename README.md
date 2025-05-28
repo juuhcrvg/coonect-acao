@@ -1,7 +1,7 @@
 🌐 ConectAção
 Plataforma web para conectar voluntários e eventos sociais. Desenvolvida com foco em engajamento comunitário, interatividade e acessibilidade.
 
-🛠️ Tecnologias utilizadas
+🛠️ Tecnologias utilizadas:
 
 -HTML5
 -CSS3
