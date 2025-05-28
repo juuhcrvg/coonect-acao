@@ -10,25 +10,6 @@ Plataforma web para conectar voluntários e eventos sociais. Desenvolvida com fo
 -SQLite (meusite.db)
 -Leaflet.js - Para mapas interativos
 
-📁 Estrutura do Projeto
-
-CONECTACAO/
-├── assets/
-│   ├── css/
-│   └── js/
-├── public/
-│   ├── img/
-│   ├── events.html
-│   ├── profile.html
-│   ├── reports.html
-│   ├── volunteers.html
-├── dashboard.html
-├── index.html
-├── meusite.db
-├── server.js
-├── package.json
-└── package-lock.json
-
 🚀 Como rodar o projeto localmente
 Clone o repositório:
 
