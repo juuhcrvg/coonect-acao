@@ -21,6 +21,26 @@ body.dark-mode h1 {
 body:not(.dark-mode) h1 {
   color: #111 !important;
 }
+.form-container h1 {
+    color: #333; /* Cor do título no modo claro */
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="text"] {
+    background-color: #f0f0f0; /* Fundo dos inputs no modo claro */
+    color: #333; /* Texto dos inputs no modo claro */
+    border: 1px solid #ddd;
+}
+
+.form-container button[type="submit"] {
+    background-color: #FF4B2B; /* Laranja no modo claro */
+    color: white;
+}
+
+.form-container a {
+    color: #333; /* Cor dos links no modo claro */
+}
 
 
 /* Botão modo claro/escuro */
@@ -446,4 +466,40 @@ t {
     .container-texto-relatorios-colunas {
         flex-direction: column;
     }
+}
+
+.meu-botao-problematico {
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    word-break: break-word; /* Força a quebra de palavras longas, se necessário */
+}
+@media (max-width: 480px) {
+    .btn { /* Ou a classe específica do botão */
+        padding: 10px 15px; /* Padding menor para telas pequenas */
+        font-size: 14px;    /* Fonte menor, se ajudar */
+    }
+}
+
+/* FORÇAR TEXTO ESCURO DENTRO DOS CARDS DE EVENTO (.artigo) QUANDO O MODO ESCURO ESTIVER ATIVO */
+
+body.dark-mode .artigo .conteudo-artigo .titulo-artigo {
+    color: #000000; /* Um preto mais suave ou cinza bem escuro para o título */
+}
+
+body.dark-mode .artigo .conteudo-artigo p { 
+    /* Esta regra afetará todos os parágrafos dentro de .conteudo-artigo, 
+       incluindo o .data-artigo se ele for um <p> e não tiver uma regra mais específica abaixo */
+    color: #000000; /* Cinza escuro para o texto principal dos parágrafos */
+}
+
+/* Você pode ser mais específico para a data, se necessário */
+body.dark-mode .artigo .conteudo-artigo .data-artigo {
+    color: #000000; /* Cinza um pouco mais claro para a data */
+}
+
+body.dark-mode .artigo .conteudo-artigo a {
+    /* No modo escuro, seus links globais ficam claros (--cor-texto-links: #66b2ff).
+       Se o card é claro, o link precisa ser escuro para ter contraste. */
+    color: #0056b3; /* Um azul escuro, ou sua cor de link do modo claro */
+                    /* Alternativa: usar a variável do modo claro: color: var(--text-color-light); (preto) 
+                       ou a variável de links do modo claro: color: #007bff; (se --cor-texto-links no :root é #007bff) */
 }

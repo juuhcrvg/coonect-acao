@@ -7,38 +7,72 @@ body {
     height: 100vh;
     margin: 0;
 }
+/* Dentro de @media (min-width: 1025px) ou na regra geral de .layout-wrapper se ele for sempre flex row por padrão */
 
+.container { /* Onde está seu formulário */
+    flex: 1; /* Ou uma proporção, ex: flex: 0 0 50%; ou flex-basis: 50%; */
+             /* Se você quer uma largura fixa como width: 400px, o .image-side com flex:1 tomará o resto */
+    /* ... seus outros estilos para .container ... */
+    
+}
 /* Layout principal */
-.layout-wrapper {
+
+layout-wrapper {
     display: flex;
     width: 100%;
     max-width: 1000px;
     height: 600px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(246, 7, 7, 0.942),
-                0 10px 10px rgba(240, 6, 6, 0.934);
     overflow: hidden;
+    flex-direction: column;
+    
 }
-
-.image-side {
-    flex: 1;
-
+.layout-wrapper {
+    flex-direction: column; 
+    display: flex;/* Coloca os itens um em cima do outro */
+}
+.layout-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-height: auto;
-    width: auto;
+    /* ... outros estilos ... */
+    gap: 10px; /* Experimente com valores menores, como 5px, ou até 0px */
 }
 
+/* Se a imagem azul estiver diretamente dentro de .image-side como um <img> tag: */
 .image-side img {
-    max-width: 600px;
-    height: 120%;
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+    object-fit: cover; /* Para preencher o círculo sem distorcer */
+    /* Remova border-radius daqui se você aplicou na div .image-side */
+    border-radius: 5; /* Se preferir aplicar o border-radius diretamente na imagem */
+    box-shadow: 0 14px 28px rgba(0 0 0 0.25);
 }
+@media (max-width: 768px) { /* Ou 480px se preferir */
+    .layout-wrapper {
+        flex-direction: column; /* Coloca imagem e formulário um em cima do outro */
+        height: auto; /* Altura automática para acomodar o conteúdo */
+    }
 
+    .image-side {
+        display: flex; /* Garante que está visível */
+        width: 100%;   /* Ocupa a largura */
+        /* Remova height: 200px fixo se quiser que a altura seja baseada no conteúdo da imagem */
+        /* ou defina uma altura desejada para a imagem no mobile */
+        max-height: 300px; /* Exemplo: Limita a altura da imagem no mobile */
+        margin-bottom: 20px; /* Espaço entre a imagem e o formulário */
+        box-shadow: 0 14px 28px rgba(0,0,0, 0.25);
+    }
+
+
+    .container { /* Formulário */
+        width: 100%;
+        max-width: 100%;
+    }
+}
 .container {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
                 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
@@ -206,46 +240,6 @@ a:active {
 
     a {
         font-size: 14px;
-    }
-}
-
-/* Celulares grandes e tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-    .layout-wrapper {
-        flex-direction: column;
-        height: auto;
-        box-shadow: none;
-    }
-
-    .image-side {
-        height: 200px;
-        justify-content: center;
-        padding: 10px;
-    }
-
-    .image-side img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-        box-shadow: none;
-    }
-
-    form {
-        padding: 30px;
-    }
-
-    input, button {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    a {
-        font-size: 15px;
     }
 }
 
