@@ -1,296 +1,219 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  min-height: 100vh;
 }
-/* Dentro de @media (min-width: 1025px) ou na regra geral de .layout-wrapper se ele for sempre flex row por padrão */
 
-.container { /* Onde está seu formulário */
-    flex: 1; /* Ou uma proporção, ex: flex: 0 0 50%; ou flex-basis: 50%; */
-             /* Se você quer uma largura fixa como width: 400px, o .image-side com flex:1 tomará o resto */
-    /* ... seus outros estilos para .container ... */
-    
-}
-/* Layout principal */
-
-layout-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: 1000px;
-    height: 600px;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: column;
-    
-}
 .layout-wrapper {
-    flex-direction: column; 
-    display: flex;/* Coloca os itens um em cima do outro */
-}
-.layout-wrapper {
-    display: flex;
-    /* ... outros estilos ... */
-    gap: 10px; /* Experimente com valores menores, como 5px, ou até 0px */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 44px rgba(20, 2, 111, 0.708);
 }
 
-/* Se a imagem azul estiver diretamente dentro de .image-side como um <img> tag: */
 .image-side img {
-    max-width: 100%;
-    object-fit: contain;
-    max-height: 100%;
-    object-fit: cover; /* Para preencher o círculo sem distorcer */
-    /* Remova border-radius daqui se você aplicou na div .image-side */
-    border-radius: 5; /* Se preferir aplicar o border-radius diretamente na imagem */
-    box-shadow: 0 14px 28px rgba(0 0 0 0.25);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 14px 48px  rgba(20, 2, 111, 0.681);
 }
-@media (max-width: 768px) { /* Ou 480px se preferir */
-    .layout-wrapper {
-        flex-direction: column; /* Coloca imagem e formulário um em cima do outro */
-        height: auto; /* Altura automática para acomodar o conteúdo */
-    }
 
-    .image-side {
-        display: flex; /* Garante que está visível */
-        width: 100%;   /* Ocupa a largura */
-        /* Remova height: 200px fixo se quiser que a altura seja baseada no conteúdo da imagem */
-        /* ou defina uma altura desejada para a imagem no mobile */
-        max-height: 300px; /* Exemplo: Limita a altura da imagem no mobile */
-        margin-bottom: 20px; /* Espaço entre a imagem e o formulário */
-        box-shadow: 0 14px 28px rgba(0,0,0, 0.25);
-    }
-
-
-    .container { /* Formulário */
-        width: 100%;
-        max-width: 100%;
-    }
-}
 .container {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
-                0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    width: 400px;
-    max-width: 100%;
-    min-height: 400px;
-    overflow: hidden;
+  flex: 1;
+  background: #fff;
+  border-radius: 0 16px 16px 0;
+  box-shadow: none; /* remove sombra interna */
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  min-height: 400px;
 }
 
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px 0 0 16px;
+  box-shadow: none;
+}
 form {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 input {
-    background: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
 }
 
 button {
-    border-radius: 20px;
-    border: 1px solid #ff4b2b;
-    background: #ff4b2b;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-    cursor: pointer;
-    margin: 8px 0;
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background: #ff4b2b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+  margin: 8px 0;
 }
 
 button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
-/* Links: Esqueceu senha, Criar conta */
 a {
-    color: #333;
-    font-size: 14px;
-    margin-top: 10px;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+  color: #333;
+  font-size: 14px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 a:hover {
-    color: #f82904;
-    transform: scale(1.05);
+  color: #f82904;
+  transform: scale(1.05);
 }
 
 a:active {
-    color: #d9361e;
-    transform: scale(0.98);
+  color: #d9361e;
+  transform: scale(0.98);
 }
 
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ff4b2b;
-    color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    display: none;
-    z-index: 10;
-}
-
-/* Telas alternadas */
+/* Telas internas */
 .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    transition: all 0.6s ease-in-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.6s ease-in-out;
 }
 
 .sign-in-container {
-    left: 0;
-    z-index: 2;
+  left: 0;
+  z-index: 2;
 }
 
 .sign-up-container,
 .forgot-password-container,
 .logged-in-container {
-    left: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition-delay: 0.6s;
+  left: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition-delay: 0.6s;
 }
 
 .container.right-panel-active .sign-in-container {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
-.container.right-panel-active .sign-up-container {
-    transform: translateX(-100%);
-    opacity: 1;
-    z-index: 5;
-}
-
-.container.right-panel-active .forgot-password-container {
-    transform: translateX(-100%);
-    opacity: 1;
-    z-index: 5;
-}
-
+.container.right-panel-active .sign-up-container,
+.container.right-panel-active .forgot-password-container,
 .container.logged-in .logged-in-container {
-    transform: translateX(-100%);
-    opacity: 1;
-    z-index: 5;
-}
-
-/* RESPONSIVIDADE  */
-
-/* Celulares pequenos */
-@media (max-width: 480px) {
-    body {
-        flex-direction: column;
-        align-items: stretch;
-        height: auto;
-        padding: 20px;
-    }
-
-    .layout-wrapper {
-        flex-direction: column;
-        height: auto;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    .image-side {
-        display: none;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-        box-shadow: none;
-    }
-
-    form {
-        padding: 20px;
-    }
-
-    input, button {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    a {
-        font-size: 14px;
-    }
-}
-
-/* Tablets maiores e notebooks pequenos */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .layout-wrapper {
-        flex-direction: row;
-        height: auto;
-        padding: 20px;
-    }
-
-    .image-side {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .image-side img {
-        width: 100%;
-        height: auto;
-        max-width: 350px;
-    }
-
-    .container {
-        flex: 1;
-        max-width: 100%;
-        box-shadow: none;
-    }
-
-    form {
-        padding: 40px;
-    }
+  transform: translateX(-100%);
+  opacity: 1;
+  z-index: 5;
 }
 
 /* Notebooks e desktops */
 @media (min-width: 1025px) {
-    .layout-wrapper {
-        flex-direction: row;
-        max-width: 1000px;
-        height: 600px;
-        margin: auto;
-    }
+  .layout-wrapper {
+    flex-direction: row;
+    height: 600px;
+  }
 
-    .image-side img {
-        max-width: 600px;
-        height: 120%;
-    }
+  .image-side {
+    display: flex;
+  }
 
-    .container {
-        width: 400px;
-    }
+  .image-side img {
+    height: 100%;
+  }
 }
 
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layout-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
 
+  .image-side {
+    width: 100%;
+    max-height: 300px;
+    box-shadow: 0 14px 28px rgba(0,0,0, 0.25);
+  }
 
+  .image-side img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 20px;
+  }
+
+  .layout-wrapper {
+    flex-direction: column;
+    height: auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .image-side {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 16px;
+  }
+}
